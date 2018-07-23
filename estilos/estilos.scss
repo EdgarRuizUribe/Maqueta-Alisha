@@ -290,7 +290,7 @@ footer{
     }
   }
 }
-@media  (max-width: 1090px ) {
+@media  (max-width: 1209px ) {
   footer .skull h4{
     width: 25%;
   }
@@ -298,3 +298,26 @@ footer{
     margin-left: 8%;
   }
 }
+@media  (max-width: 861px ){
+  .logo{
+    font-size: 130%;
+  }
+  header nav ul li a{
+    font-size: 100%;
+  }
+  .body-principal{
+    & .our-portafolio{
+      & h2{
+        font-size: 120%;
+      }
+      & h3{
+        font-size: 95%;
+      }
+      & ul li a{
+        font-size: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 741px ){}
