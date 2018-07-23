@@ -1,0 +1,300 @@
+$color-letra-primario:black;
+$color-letra-secundario:gray;
+$color-letra-terceario: white;
+$fondo-gris:#eaeae7;
+$ancho:80%;
+@mixin ancho {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: .3rem auto;
+}
+@mixin linksA {
+  text-decoration: none;
+  color: $color-letra-primario;
+}
+@mixin btn {
+  background: #333333;
+  color: $color-letra-terceario;
+  border: none;
+  width: 8rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+@mixin divRow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+@mixin centerTitle {
+  font-size: .8rem;
+  margin-bottom: 0;
+  margin-top: .3rem;
+}
+body{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #f3f3f3;
+  & a{
+    @include linksA;
+  }
+}
+header {
+  background: $fondo-gris;
+  width: $ancho;
+  & nav{
+   display: flex;
+   justify-content: space-around;
+   & a{
+    &:hover{
+      color: $color-letra-secundario;
+      }
+    }
+   & ul{
+     display: flex;
+     & li{
+       list-style: none;
+       margin: 5px;
+       padding: 3px;
+      }
+    }
+  }
+  & section{
+    display: flex;
+    flex-wrap: nowrap;
+    & .column-left{
+      width: 50%;
+      height: 20rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      & .we-are-alasha-column{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        & h2{
+          width: 100%;
+          font-size: 250%;
+          margin:0 0 0 40%;
+        }
+        & h3{
+          margin:0 0 0 42%;
+          width: 100%;
+          font-size: 1.2rem;
+          color: $color-letra-secundario;
+        }
+        & h4{
+          margin:0 0 0 70%;
+          width: 100%;
+          font-size: 1rem;
+          & a{
+            &:hover{
+              color: $color-letra-secundario;
+            }
+          }
+        }
+      }
+      & .rows{
+        margin-left: 45%;
+        width: 100%;
+        font-size: 2rem;
+        & a{
+          color: $color-letra-secundario;
+          &:hover{
+            color: $color-letra-primario;
+          }
+        }
+      }
+    }
+    & .column-right{
+      width: 50%;
+      & img{
+        width: 100%;
+      }
+    }
+      
+    }
+  }
+.body-principal{
+  display: flex;
+  flex-direction: column;
+  width: $ancho;
+  background: white;
+  align-items: center;
+  & .our-portafolio{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 6rem;
+    & h2{
+      @include ancho;
+      font-size: 2rem;
+    }
+    & h3{
+      @include ancho;
+      color: $color-letra-secundario;
+      font-size: 1rem;
+    }
+    & ul{
+      @include ancho;
+      & li{
+        list-style: none;
+        margin: .6rem;
+        & a{
+          font-size: 1rem; 
+          &:hover{
+            color: $color-letra-secundario;
+          }
+        }
+      }
+      
+    }
+  }
+  & .images{
+    width: $ancho;
+    display: flex;
+    margin-top: 3rem;
+    & div{
+      display: flex;
+      flex-wrap: wrap;  
+      justify-content: center;
+      align-items: center;
+      & img{
+        width: 100%;
+      }
+    }
+  }
+  & .btn-loadmore{
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    & input{
+      @include btn;
+    }
+  }
+  & .btn-lets-work{
+    @include ancho;
+    display: block;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    & h3{
+      margin-left: 25%;
+      display: inline-block;
+    }
+    & input{
+      @include btn;
+      width: 10rem;
+      display: inline-block;
+      margin-left:25%;
+    }
+  }
+}
+footer{
+  width: $ancho;
+  background: #333333;
+  & .contactus{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 5%;
+    & > div{
+      width: 25%
+    }
+    & h3{
+      color: $color-letra-terceario;
+    }
+    & h4{
+      color: $color-letra-secundario;
+      margin-bottom: 0;
+      margin-top: .5rem;
+      font-size: .8rem;
+      & a{
+        color: $color-letra-secundario;
+        &:hover{
+          color: white;
+        }
+      }
+    }
+    & i{
+      margin-left: .8rem;
+      margin-top: 1rem;
+      color: $color-letra-secundario;
+      font-size: .8rem;
+      &:hover{
+        color: white;
+      }
+    }
+    & .div-recent-post{
+      & .div-row-one{
+        @include divRow;
+        & h3{
+        @include centerTitle;
+        }
+        & h4{
+          margin-top: 0;
+        }
+      }
+      & .div-row-two{
+        @include divRow;
+        & h3{
+          @include centerTitle;
+        }
+        & h4{
+          margin-top: 0;
+        }
+      }
+    }
+    & .div-newlater{
+      display: flex;
+      flex-wrap: wrap;
+      & h3{
+        width: 100%;
+        margin-bottom: 0;
+      }
+      & input{
+        margin-top: 0;
+        width: 60%;
+        height: 15%;
+      }
+    }
+  }
+  & .skull{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+    & h4{
+      display: inline-block;
+      width: 55%;
+      color: $color-letra-secundario; 
+    }
+    & ul{
+      width: 30%;
+      display: inline;
+      margin: 0;
+      & li{
+        list-style: none;
+        margin: .4rem;
+        display: inline-block;
+        & a{
+          color: $color-letra-secundario;
+          &:hover{
+            color: $color-letra-terceario;
+          }
+        }
+      }
+    }
+  }
+}
+@media  (max-width: 1090px ) {
+  footer .skull h4{
+    width: 25%;
+  }
+  .body-principal .btn-lets-work h3{
+    margin-left: 8%;
+  }
+}
